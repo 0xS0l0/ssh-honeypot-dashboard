@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <title>Honeypot Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #38bdf8;
+        }
+
+        h2 {
+            color: #e2e8f0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #334155;
+            text-align: left;
+        }
+
+        th {
+            color: #38bdf8;
+        }
+
+        tr:hover {
+            background-color: #1e293b;
+        }
+
+        .danger {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .medium {
+            color: #facc15;
+        }
+
+        .safe {
+            color: #22c55e;
+        }
+
+        .badge {
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .badge-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .badge-medium {
+            background: #facc15;
+            color: black;
+        }
+
+        .badge-safe {
+            background: #22c55e;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>🚨 Honeypot Security Dashboard</h1>
+
+<!-- Top Section -->
+<div class="grid">
+
+    <div class="card">
+        <h2>Total Attacks</h2>
+        <h1>{{ total }}</h1>
+    </div>
+
+    <div class="card">
+        <h2>Top Attacking IPs</h2>
+        <ul>
+            {% for ip, count in top_ips %}
+            <li>{{ ip }} — {{ count }} attempts</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+<!-- Chart Section -->
+<div class="card">
+    <h2>Attack Activity (Hourly)</h2>
+    <canvas id="attackChart"></canvas>
+</div>
+
+<!-- Password Section -->
+<div class="grid">
+    <div class="card">
+        <h2>Most Used Passwords</h2>
+        <ul>
+            {% for pwd, count in top_passwords %}
+            <li>{{ pwd }} — {{ count }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- Logs Table -->
+<div class="card">
+    <h2>Recent Login Attempts</h2>
+
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>IP</th>
+            <th>Country</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Threat</th>
+        </tr>
+
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.ip }}</td>
+            <td>{{ log.country }}</td>
+            <td>{{ log.username }}</td>
+
+            <!-- Password Highlight -->
+            <td class="{% if log.password in ['123456','admin','password'] %}danger{% else %}medium{% endif %}">
+                {{ log.password }}
+            </td>
+
+            <!-- Threat Badge -->
+            <td>
+                {% if log.password in ['123456','admin','password'] %}
+                    <span class="badge badge-danger">High</span>
+                {% elif log.password|length < 6 %}
+                    <span class="badge badge-medium">Medium</span>
+                {% else %}
+                    <span class="badge badge-safe">Low</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- Chart Script -->
+<script>
+const ctx = document.getElementById('attackChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ hours | tojson }},
+        datasets: [{
+            label: 'Attacks',
+            data: {{ counts | tojson }},
+            borderColor: '#38bdf8',
+            backgroundColor: 'rgba(56,189,248,0.1)',
+            tension: 0.3,
+            fill: true
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: "#e2e8f0"
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: { color: "#e2e8f0" }
+            },
+            y: {
+                ticks: { color: "#e2e8f0" }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
