@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="refresh" content="5">
-    <title>Honeypot Dashboard</title>
+    <title>Honeypot SOC Dashboard</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -16,10 +16,6 @@
 
         h1 {
             color: #38bdf8;
-        }
-
-        h2 {
-            color: #e2e8f0;
         }
 
         .grid {
@@ -46,6 +42,7 @@
             padding: 8px;
             border-bottom: 1px solid #334155;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
@@ -90,16 +87,36 @@
             color: white;
         }
 
+        .commands {
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 13px;
+        }
+
+        .cmd {
+            background: #020617;
+            padding: 3px 6px;
+            margin: 2px 0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .cmd-danger {
+            color: #ef4444;
+        }
+
+        .cmd-normal {
+            color: #38bdf8;
+        }
     </style>
 </head>
 
 <body>
 
-<h1>🚨 Honeypot Security Dashboard</h1>
+<h1>🚨 Honeypot SOC Dashboard</h1>
 
 <!-- Top Section -->
 <div class="grid">
-
     <div class="card">
         <h2>Total Attacks</h2>
         <h1>{{ total }}</h1>
@@ -113,16 +130,15 @@
             {% endfor %}
         </ul>
     </div>
-
 </div>
 
-<!-- Chart Section -->
+<!-- Chart -->
 <div class="card">
     <h2>Attack Activity (Hourly)</h2>
     <canvas id="attackChart"></canvas>
 </div>
 
-<!-- Password Section -->
+<!-- Password Stats -->
 <div class="grid">
     <div class="card">
         <h2>Most Used Passwords</h2>
@@ -136,7 +152,7 @@
 
 <!-- Logs Table -->
 <div class="card">
-    <h2>Recent Login Attempts</h2>
+    <h2>Session Logs (With Commands)</h2>
 
     <table>
         <tr>
@@ -146,6 +162,7 @@
             <th>Username</th>
             <th>Password</th>
             <th>Threat</th>
+            <th>Commands</th>
         </tr>
 
         {% for log in logs %}
@@ -170,6 +187,22 @@
                     <span class="badge badge-safe">Low</span>
                 {% endif %}
             </td>
+
+            <!-- Commands -->
+            <td>
+                <div class="commands">
+                    {% if log.commands %}
+                        {% for cmd in log.commands %}
+                            <div>
+                                {{ cmd.command }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        -
+                    {% endif %}
+                </div>
+            </td>
+
         </tr>
         {% endfor %}
     </table>
@@ -195,9 +228,7 @@ new Chart(ctx, {
     options: {
         plugins: {
             legend: {
-                labels: {
-                    color: "#e2e8f0"
-                }
+                labels: { color: "#e2e8f0" }
             }
         },
         scales: {
@@ -213,4 +244,4 @@ new Chart(ctx, {
 </script>
 
 </body>
-</html>
+</html>:

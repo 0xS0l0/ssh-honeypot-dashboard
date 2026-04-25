@@ -1,134 +1,338 @@
 [
     {
-        "timestamp": "2026-04-24 11:57:53.073009",
+        "session_id": "19cf0f9e-4da7-41cf-b9b9-39a43168d62d",
+        "timestamp": "2026-04-25 18:55:13.601947",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "test"
+        "username": "admin",
+        "password": "password",
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 11:58:00.108341",
+        "session_id": "d1b9bb60-b53c-4945-91fe-2913a991f97e",
+        "timestamp": "2026-04-25 19:02:52.756759",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
+        "username": "admin",
+        "password": "admin",
+        "commands": [
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:02:55.785356"
+            },
+            {
+                "command": "get file1.txt",
+                "time": "2026-04-25 19:03:11.250128"
+            },
+            {
+                "command": "whoami",
+                "time": "2026-04-25 19:03:59.549197"
+            },
+            {
+                "command": "id",
+                "time": "2026-04-25 19:04:03.752350"
+            },
+            {
+                "command": "nc",
+                "time": "2026-04-25 19:04:08.117716"
+            },
+            {
+                "command": "curl",
+                "time": "2026-04-25 19:04:10.486317"
+            },
+            {
+                "command": "which python",
+                "time": "2026-04-25 19:04:14.340634"
+            },
+            {
+                "command": "sud -l",
+                "time": "2026-04-25 19:04:20.698843"
+            },
+            {
+                "command": "sud su",
+                "time": "2026-04-25 19:04:24.188285"
+            },
+            {
+                "command": "pwd",
+                "time": "2026-04-25 19:04:27.526543"
+            },
+            {
+                "command": "cd /",
+                "time": "2026-04-25 19:04:30.825428"
+            },
+            {
+                "command": "rm -rf *",
+                "time": "2026-04-25 19:04:41.020597"
+            },
+            {
+                "command": "unzip",
+                "time": "2026-04-25 19:04:47.015538"
+            }
+        ]
     },
     {
-        "timestamp": "2026-04-24 11:58:14.023934",
+        "session_id": "8284c8db-7686-4b6f-a923-83a4f66246de",
+        "timestamp": "2026-04-25 19:26:22.116748",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "pass"
+        "username": "admin",
+        "password": "admin",
+        "commands": [
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:26:24.727085"
+            },
+            {
+                "command": "sudo -;",
+                "time": "2026-04-25 19:26:32.719363"
+            },
+            {
+                "command": "sudo -l",
+                "time": "2026-04-25 19:26:36.103371"
+            },
+            {
+                "command": "pwd",
+                "time": "2026-04-25 19:26:41.283288"
+            },
+            {
+                "command": "cd",
+                "time": "2026-04-25 19:26:53.421255"
+            },
+            {
+                "command": "cd ..",
+                "time": "2026-04-25 19:26:55.189871"
+            },
+            {
+                "command": "cd /",
+                "time": "2026-04-25 19:26:57.565486"
+            },
+            {
+                "command": "id",
+                "time": "2026-04-25 19:27:00.373604"
+            },
+            {
+                "command": "whoam\u007fi",
+                "time": "2026-04-25 19:27:04.911071"
+            },
+            {
+                "command": "whoami",
+                "time": "2026-04-25 19:27:08.115185"
+            },
+            {
+                "command": "wha\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f",
+                "time": "2026-04-25 19:27:18.940563"
+            },
+            {
+                "command": "wha\u007f\u007f\u007f\u007f\u007f\u007f",
+                "time": "2026-04-25 19:27:22.670623"
+            },
+            {
+                "command": "whoami",
+                "time": "2026-04-25 19:27:25.809859"
+            },
+            {
+                "command": "pwd",
+                "time": "2026-04-25 19:27:33.156134"
+            },
+            {
+                "command": "id",
+                "time": "2026-04-25 19:27:37.751847"
+            },
+            {
+                "command": "sysinfo",
+                "time": "2026-04-25 19:27:42.397725"
+            },
+            {
+                "command": "w\u007f\u007f\u007f\u007fexit",
+                "time": "2026-04-25 19:27:50.943235"
+            },
+            {
+                "command": "quit",
+                "time": "2026-04-25 19:27:53.243129"
+            }
+        ]
     },
     {
-        "timestamp": "2026-04-24 11:58:34.254308",
+        "session_id": "09fbd1c5-dc82-4c8c-948c-1158b2d3259c",
+        "timestamp": "2026-04-25 19:30:25.228605",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "admin"
+        "username": "root",
+        "password": "password",
+        "commands": [
+            {
+                "command": "1\u007f\u007f\u007fls",
+                "time": "2026-04-25 19:30:32.487034"
+            },
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:30:33.667639"
+            },
+            {
+                "command": "ls -la",
+                "time": "2026-04-25 19:30:36.841953"
+            },
+            {
+                "command": "sudo -l",
+                "time": "2026-04-25 19:30:40.543788"
+            },
+            {
+                "command": "pwd",
+                "time": "2026-04-25 19:30:42.862259"
+            },
+            {
+                "command": "whoami",
+                "time": "2026-04-25 19:30:46.001408"
+            },
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:31:03.353010"
+            },
+            {
+                "command": "cat sc\u007fe\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007f\u007fcat file1.txt",
+                "time": "2026-04-25 19:31:23.723793"
+            },
+            {
+                "command": "exit",
+                "time": "2026-04-25 19:31:28.183069"
+            }
+        ]
     },
     {
-        "timestamp": "2026-04-24 12:04:08.989593",
+        "session_id": "3421d937-2095-44c7-bd75-bce7bd43be67",
+        "timestamp": "2026-04-25 19:45:10.293437",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "solo"
+        "username": "root",
+        "password": "abcd",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:14.157842",
+        "session_id": "5dd143ad-e73a-4e74-9dd5-116356e6da76",
+        "timestamp": "2026-04-25 19:45:15.301729",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
+        "username": "root",
+        "password": "ls",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:24.436904",
+        "session_id": "5710d5d9-ab2d-4501-9dda-3c7f5b18a44d",
+        "timestamp": "2026-04-25 19:48:30.815501",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
+        "username": "root",
+        "password": "qwerty",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:29.801269",
+        "session_id": "8cccfa01-a112-48d8-a7b4-d96990431351",
+        "timestamp": "2026-04-25 19:48:36.108100",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
+        "username": "root",
+        "password": "123466",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:32.908383",
+        "session_id": "303efb5b-7dd4-4441-ad5c-0a3c043954a8",
+        "timestamp": "2026-04-25 19:48:41.489220",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "admin"
+        "username": "root",
+        "password": "123456780",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:36.210835",
+        "session_id": "4fa0d4a1-74a3-49d2-b9d8-c2671976cc2e",
+        "timestamp": "2026-04-25 19:49:45.472020",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "admin"
+        "username": "root",
+        "password": "admin",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:04:47.326588",
+        "session_id": "5abd26e6-888e-449d-84b1-8cbcafbeee95",
+        "timestamp": "2026-04-25 19:49:51.519312",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "letmein"
+        "username": "root",
+        "password": "password",
+        "success": true,
+        "commands": [
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:49:54.333873"
+            },
+            {
+                "command": "pwd",
+                "time": "2026-04-25 19:49:57.176368"
+            },
+            {
+                "command": "whoami",
+                "time": "2026-04-25 19:50:08.685179"
+            },
+            {
+                "command": "cat",
+                "time": "2026-04-25 19:50:11.618039"
+            },
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:50:12.752320"
+            },
+            {
+                "command": "get file1.txt",
+                "time": "2026-04-25 19:50:22.392519"
+            },
+            {
+                "command": "cat file1.txt",
+                "time": "2026-04-25 19:50:29.955636"
+            },
+            {
+                "command": "sudo -l",
+                "time": "2026-04-25 19:50:32.693121"
+            },
+            {
+                "command": "exit",
+                "time": "2026-04-25 19:50:36.269131"
+            }
+        ]
     },
     {
-        "timestamp": "2026-04-24 12:15:58.635882",
+        "session_id": "a730f8d8-2435-4426-8185-df870aa692e3",
+        "timestamp": "2026-04-25 19:52:33.577354",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "solo"
+        "username": "root",
+        "password": "s",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:16:00.413652",
+        "session_id": "88681884-b673-45dc-bb04-7a9063b7f916",
+        "timestamp": "2026-04-25 19:52:40.400345",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": ""
+        "username": "root",
+        "password": "werty",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:16:04.182376",
+        "session_id": "75998d81-5547-4beb-9bb7-080306e2d9ca",
+        "timestamp": "2026-04-25 19:52:48.130753",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "admin"
+        "username": "root",
+        "password": "passwd",
+        "success": false,
+        "commands": []
     },
     {
-        "timestamp": "2026-04-24 12:16:07.407886",
+        "session_id": "a6ec159e-224e-4c28-b59c-7faef28ef92f",
+        "timestamp": "2026-04-25 19:52:53.825204",
         "ip": "127.0.0.1",
-        "username": "test",
-        "password": "toor"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:12.263774",
-        "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:16.420142",
-        "ip": "127.0.0.1",
-        "username": "test",
-        "password": "password"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:27.956921",
-        "ip": "127.0.0.1",
-        "username": "test1",
-        "password": "password"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:36.139058",
-        "ip": "127.0.0.1",
-        "username": "test1",
-        "password": "password"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:39.818580",
-        "ip": "127.0.0.1",
-        "username": "test1",
-        "password": "admn"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:44.047718",
-        "ip": "127.0.0.1",
-        "username": "test1",
-        "password": "admin"
-    },
-    {
-        "timestamp": "2026-04-24 12:16:54.894406",
-        "ip": "127.0.0.1",
-        "username": "test3",
-        "password": "password"
+        "username": "root",
+        "password": "toor",
+        "success": true,
+        "commands": [
+            {
+                "command": "ls",
+                "time": "2026-04-25 19:52:56.779021"
+            }
+        ]
     }
 ]
