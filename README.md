@@ -9,6 +9,18 @@ A Python-based SSH honeypot that simulates a vulnerable server to capture real-w
 This project is designed to mimic a real SSH service and log unauthorized access attempts. It captures attacker IP addresses, credentials, and timestamps, and provides analysis and visualization similar to a mini SOC (Security Operations Center) environment.
 
 ---
+## 📊 Dashboard Preview
+
+<img src="screenshots/dashboard.png" width="800"/>
+
+## 🧾 Logs View
+
+<img src="screenshots/logs0.png" width="800"/>
+
+<img src="screenshots/logs1.png" width="800"/>
+
+
+---
 
 ## 🔥 Features
 
