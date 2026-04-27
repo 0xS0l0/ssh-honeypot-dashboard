@@ -1,37 +1,45 @@
-# 🚨 SSH Honeypot with Real-Time Dashboard
+# 🚨 SSH Honeypot with Real-Time SOC Dashboard
 
-A Python-based SSH honeypot that simulates a vulnerable server to capture real-world attack attempts, analyze attacker behavior, and visualize insights through a web-based dashboard.
+A Python-based SSH honeypot that simulates a vulnerable server to capture real-world attack attempts, analyze attacker behavior, and visualize insights through a live web dashboard.
 
 ---
 
 ## 📌 Overview
 
-This project is designed to mimic a real SSH service and log unauthorized access attempts. It captures attacker IP addresses, credentials, and timestamps, and provides analysis and visualization similar to a mini SOC (Security Operations Center) environment.
+This project mimics a real SSH service and logs unauthorized access attempts in real time.  
+It captures attacker IPs, credentials, and post-login activity, providing insights similar to a **mini SOC (Security Operations Center)**.
 
 ---
+
 ## 📊 Dashboard Preview
 
-<img src="screenshots/dashboard.png" width="800"/>
+<p align="center">
+  <img src="screenshots/dashboard.png" width="800"/>
+</p>
 
-## 🧾 Logs View
+---
 
-<img src="screenshots/logs0.png" width="800"/>
+## 🧾 Logs & Command Activity
 
-<img src="screenshots/logs1.png" width="800"/>
-
+<p align="center">
+  <img src="screenshots/logs0.png" width="800"/>
+  <br><br>
+  <img src="screenshots/logs1.png" width="800"/>
+</p>
 
 ---
 
 ## 🔥 Features
 
-* 🛡️ SSH Honeypot (Paramiko-based fake SSH server)
-* 📊 Real-time attack monitoring dashboard (Flask)
-* 🌍 GeoIP tracking (attacker country identification)
-* 🚨 Brute-force & rapid attack detection
-* 📈 Attack trends visualization (Chart.js)
-* 🔍 Top attacking IPs & most used passwords
-* ⚠️ Threat scoring & risk highlighting
-* 🔄 Auto-refreshing dashboard (live monitoring)
+- 🛡️ SSH Honeypot (Paramiko-based fake SSH server)
+- 📊 Real-time monitoring dashboard (Flask)
+- 🌍 GeoIP tracking (attacker country detection)
+- 🚨 Brute-force & rapid attack detection
+- 📈 Attack trend visualization (Chart.js)
+- 🔍 Top attacking IPs & most used passwords
+- ⚠️ Threat classification (Low / Medium / High)
+- 💻 Command logging after successful login
+- 🔄 Auto-refreshing dashboard (live monitoring)
 
 ---
 
@@ -39,13 +47,13 @@ This project is designed to mimic a real SSH service and log unauthorized access
 
 ```
 honeypot/
-├── honeypot.py        # SSH honeypot server
-├── detector.py        # Attack detection logic
-├── dashboard.py       # Flask web dashboard
-├── geoip.py           # IP geolocation lookup
-├── logs.json          # Captured attack logs
+├── honeypot.py # SSH honeypot server
+├── detector.py # Attack detection logic
+├── dashboard.py # Flask dashboard
+├── geoip.py # IP geolocation lookup
+├── logs.json # Captured logs
 └── templates/
-    └── index.html     # Dashboard UI
+└── index.html # Dashboard UI
 ```
 
 ---
@@ -55,8 +63,8 @@ honeypot/
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/yourusername/honeypot-dashboard.git
-cd honeypot-dashboard
+git clone https://github.com/0xs0l0/ssh-honeypot-dashboard.git
+cd ssh-honeypot-dashboard
 ```
 
 ### 2. Install dependencies
@@ -97,11 +105,16 @@ You can simulate attacks locally:
 ssh admin@localhost -p 2222
 ```
 
-Enter any password — it will be logged and displayed on the dashboard.
+Try weak credentials:
 
+```
+admin / password
+root / 123456
+```
+All attempts will be logged and visualized in the dashboard.
 ---
 
-## 📊 Dashboard Preview
+## 📊 What You Can Observe
 
 * Total attack count
 * Top attacking IPs
